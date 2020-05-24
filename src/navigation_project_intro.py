@@ -5,7 +5,7 @@ Code from the Udacity IPython notebook introduction to the Navigation project.
 from unityagents import UnityEnvironment
 import numpy as np
 
-env = UnityEnvironment(file_name="Banana_Windows_x86_64/Banana_Windows_x86_64/Banana.exe")
+env = UnityEnvironment(file_name="Banana.exe")
 
 # get the default brain
 brain_name = env.brain_names[0]

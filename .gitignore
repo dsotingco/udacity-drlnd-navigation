@@ -1,1 +1,6 @@
 *.vscode
+*.log
+
+src/Banana.exe
+src/UnityPlayer.dll
+src/Banana_Data
