@@ -9,7 +9,7 @@ from collections import deque
 from dqn_agent import Agent
 import matplotlib.pyplot as plt
 
-def dqn(agent, n_episodes=5, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
+def dqn(agent, n_episodes=200, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
     """Deep Q-Learning.
     
     Params
@@ -32,6 +32,7 @@ def dqn(agent, n_episodes=5, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
             next_state = env_info.vector_observations[0]
             reward = env_info.rewards[0]
             done = env_info.local_done[0]
+            agent.step(state, action, reward, next_state, done)
             score += reward
             state = next_state
             if done:
@@ -42,7 +43,7 @@ def dqn(agent, n_episodes=5, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
         print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)), end="")
         if i_episode % 100 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
-        if np.mean(scores_window)>=200.0:
+        if np.mean(scores_window)>=13.0:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
             torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
             break
