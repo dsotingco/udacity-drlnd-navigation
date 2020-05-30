@@ -21,8 +21,11 @@ Additional hyperparameters in **dqn_agent.py** and **train_banana_agent.py** are
 * TAU: interpolation parameter used for soft update of target parameters
 * LR: learning rate
 * UPDATE_EVERY: parameter controlling how often to update the network
+* EPS_START, EPS_END, EPS_DECAY: parameters for the epsilon-greedy policy, controlling how often to choose a random action
 
 # Reward Plots
 
 # Ideas for Future Work
-
+This implementation uses a straightforward vanilla implementation of the DQN algorithm.  A few improvements would likely improve performance:
+* Prioritized Experience Replay: Resampling tuples that generate a larger TD error could allow the algorithm to learn more from particularly important experiences.
+* Frame stacking: Stacking multiple frames together into a sequence for input (as reported by DeepMind for its Atari implementations) would likely improve agent performance by allowing it to utilize a short-term memory of bananas that are not in its current field of view, but which it has seen in the past few timesteps.
