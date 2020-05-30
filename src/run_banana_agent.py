@@ -5,7 +5,7 @@ from collections import deque
 from dqn_agent import Agent
 import matplotlib.pyplot as plt
 
-n_episodes = 1
+n_episodes = 100
 
 env = UnityEnvironment(file_name="Banana.exe")
 
