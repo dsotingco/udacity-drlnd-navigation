@@ -17,5 +17,15 @@ The agent's action space is discrete, with 4 possible actions at each step:
 The environment is considered solved when the agent obtains an average score of at least +13 over 100 consecutive episodes.
 
 # Getting Started
+The dependencies for this submission are the same as for the [Udacity Deep Reinforcement Learning nanodegree](https://github.com/udacity/deep-reinforcement-learning#dependencies):
+* Python 3.6
+* pytorch
+* unityagents
+* [Udacity banana project environment](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+
+This project was completed and tested on a local Windows environment (64-bit) running Python 3.6.10 in a conda environment.
 
 # Instructions
+To train the agent, run **train_banana_agent.py**.  This will save the model parameters in **checkpoint.pth** once the agent has fulfilled the criteria for considering the environment solved.
+
+To run the trained agent, run **run_banana_agent.py**.  This will load the saved model parameters from checkpoint.pth, and run the trained model in the banana-collecting environment.  The *n_episodes* parameter is the number of episodes that will be run.  By default, this parameter is set to 100 to facilitate validation of the trained agent.
