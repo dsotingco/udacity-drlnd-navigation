@@ -24,6 +24,12 @@ Additional hyperparameters in **dqn_agent.py** and **train_banana_agent.py** are
 * EPS_START, EPS_END, EPS_DECAY: parameters for the epsilon-greedy policy, controlling how often to choose a random action
 
 # Reward Plots
+The agent solved the environment in 840 episodes.  A plot of the training rewards is shown below.
+![Training Rewards Plot](banana_project_solved_840_episodes_fc1_128.png "Training Rewards Plot")
+
+For further validation, the trained agent was run through the environment for an additional 100 episodes, achieving an average score of 13.29.  A plot of the validation rewards is shown below.
+![Validation Rewards Plot](banana_project_validation_avg_score_13.29.png "Validation Rewards Plot")
+
 
 # Ideas for Future Work
 This implementation uses a straightforward vanilla implementation of the DQN algorithm.  A few improvements would likely improve performance:
