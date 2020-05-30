@@ -26,8 +26,9 @@ for i_episode in range(0, n_episodes):
     state = brain_info.vector_observations[0]
     score = 0
     while True:
-        action = agent.act(state)
+        action = agent.act(state, eps=0.0, training_mode=False)
         env_info = env.step(action)[brain_name]
+        state = env_info.vector_observations[0]
         reward = env_info.rewards[0]
         done = env_info.local_done[0]
         score += reward

@@ -56,7 +56,7 @@ class Agent():
                 experiences = self.memory.sample()
                 self.learn(experiences, GAMMA)
 
-    def act(self, state, eps=0.):
+    def act(self, state, eps=0.0, training_mode=True):
         """Returns actions for given state as per current policy.
         
         Params
@@ -68,7 +68,8 @@ class Agent():
         self.qnetwork_local.eval()
         with torch.no_grad():
             action_values = self.qnetwork_local(state)
-        self.qnetwork_local.train()
+        if training_mode is True:
+            self.qnetwork_local.train()
 
         # Epsilon-greedy action selection
         if random.random() > eps:

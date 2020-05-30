@@ -27,7 +27,7 @@ def dqn(agent, n_episodes=1500, eps_start=1.0, eps_end=0.01, eps_decay=0.995, sc
         state = brain_info.vector_observations[0]
         score = 0
         while True:
-            action = agent.act(state, eps)
+            action = agent.act(state, eps, training_mode=True)
             env_info = env.step(action)[brain_name]
             next_state = env_info.vector_observations[0]
             reward = env_info.rewards[0]
